@@ -2,6 +2,7 @@
 - name: Installs Gerrit Code Review
   hosts: all
   become: true
+  strategy: debug
   vars:
     - gerrit_auth_type: DEVELOPMENT_BECOME_ANY_ACCOUNT
     - gerrit_db_info:
