@@ -19,6 +19,10 @@
     - gerrit_vagrant_install: true
     - install_mysql: true
   roles:
+    - role: geerlingguy.java
+      when: "ansible_os_family == 'RedHat'"
+      java_packages:
+        - java-1.8.0-openjdk
     - role: ansible-apache2
     - role: ansible-mariadb-mysql
       when: install_mysql is defined and install_mysql
